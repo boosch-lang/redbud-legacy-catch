@@ -1,0 +1,193 @@
+﻿html {
+	position: relative;
+	min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+	margin-bottom: 120px;
+	background-image: url("../img/loginbg.jpg");
+	background-size: cover;
+}
+h1 {
+  color: #000;
+  font: normal 35px/35px 'Museo-300', Arial, sans-serif;
+  margin: 0px 0px 15px 0px;
+}
+/*Login form settings*/
+.login-form-control{
+    border-radius: 0px;
+    margin: 12px 3px;
+    height: 40px;
+}
+.login-logo{
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;
+}
+.login-logo img{
+	height: 100%;
+	width: 100%;
+	max-width: 243px;
+	max-height: 125px;
+}
+.loginbox{
+    margin-top: 5%;
+    border-top: 6px solid #ed174c;
+	background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    box-shadow: 0 10px 10px -2px rgba(0,0,0,0.12),0 -2px 10px -2px rgba(0,0,0,0.12);    
+}
+.singtext{   
+	font-family: 'Museo-500', Arial, sans-serif;
+    font-size: 28px;  
+    color: #ed174c;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.loginButton{
+    background-color: #7ac143;
+    color: #fff;
+    margin-top: 12px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    width: 100%;
+    margin-left: 2px;
+    font-size: 16px;
+    border-radius: 0px;
+    outline: none;
+}
+.loginButton:hover,.loginButton:focus{
+    color: #fff; 
+	background-color: #97cf6d; 
+    outline: none;
+}
+.forgotPassword{
+    background-color: #F2F2F2; 
+    padding: 10px 0px;
+    text-align: center;
+}
+.forgotPassword:hover{
+        box-shadow: 0 10px 10px -2px rgba(0,0,0,0.12);    
+}
+.forgotPassword a{
+    color: #000;
+    outline: none;
+}
+.forgotPassword a:hover, .forgotPassword a:active,.forgotPassword a:focus{  
+    text-decoration: none; 
+    outline: none;
+}
+.questionsBox{
+    background-color: rgba(0, 0, 0, 0.75); 
+	color:#fff;
+    padding: 10px 0px;
+    text-align: center;
+}
+.questionsBox a{
+    color: #fff;
+    outline: none;
+}
+.questionsBox a:hover, .questionsBox a:active,.questionsBox a:focus{  
+    text-decoration: underline; 
+    outline: none;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 25px;
+    line-height: 25px;
+	color: #fff;
+	font-size:12px;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+/* Error Handling */
+.error input,
+input.error,
+.error textarea,
+textarea.error {
+  border-color: #c60f13;
+  background-color: rgba(198, 15, 19, 0.1); }
+  .error input:focus,
+  input.error:focus,
+  .error textarea:focus,
+  textarea.error:focus {
+    background: #fafafa;
+    border-color: #999999; }
+
+.error label,
+label.error,
+.error span,
+span.error {
+  color: #c60f13; }
+
+.error small,
+small.error,
+.error span,
+span.error_small {
+  display: block;
+  padding: 0.375em 0.25em;
+  margin-top: -1.3125em;
+  margin-bottom: 1em;
+  font-size: 0.75em;
+  color: #c60f13; }
+/*Media queries*/
+/* Smallest devices (phones and up) */
+.text-xs-center {
+    text-align: center;
+}
+.text-xs-right {
+    text-align: right;
+}
+.text-xs-left {
+    text-align: left;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .text-sm-center {
+        text-align: center;
+    }
+    .text-sm-right {
+        text-align: right;
+    }
+    .text-sm-left {
+        text-align: left;
+    }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .text-md-center {
+        text-align: center;
+    }
+    .text-md-right {
+        text-align: right;
+    }
+    .text-md-left {
+        text-align: left;
+    }
+}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .text-lg-center {
+        text-align: center;
+    }
+    .text-lg-right {
+        text-align: right;
+    }
+    .text-lg-left {
+        text-align: left;
+    }
+}
+
+/* Extra Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .text-xl-center {
+        text-align: center;
+    }
+    .text-xl-right {
+        text-align: right;
+    }
+    .text-xl-left {
+        text-align: left;
+    }
+}

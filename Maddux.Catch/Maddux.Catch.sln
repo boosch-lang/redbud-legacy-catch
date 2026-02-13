@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maddux.Catch", "Maddux.Catch.csproj", "{52E57D44-8AE3-9FBE-E92A-160606B3DAC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52E57D44-8AE3-9FBE-E92A-160606B3DAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E57D44-8AE3-9FBE-E92A-160606B3DAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E57D44-8AE3-9FBE-E92A-160606B3DAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E57D44-8AE3-9FBE-E92A-160606B3DAC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DE7F2E7-7ADF-4091-96A3-6D36BF291178}
+	EndGlobalSection
+EndGlobal

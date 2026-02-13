@@ -1,0 +1,225 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Redbud.master.cs" Inherits="Maddux.Pitch.Redbud" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Redbud</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/fontawesome-all.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+    <link rel="stylesheet" href="css/rbstyle.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <style>
+        .navbar-header {
+            margin-left: 0px !important
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #c9302c !important;
+            border-color: #ac2925 !important;
+        }
+
+        .btn-success:hover {
+            color: #fff;
+            background-color: #449d44 !important;
+            border-color: #398439 !important;
+        }
+
+        #navbar .dropdown-menu a,
+        #navbar .dropdown-menu a:hover {
+            color: #333;
+        }
+
+        .navbar-collapse {
+            border-top: none !important;
+        }
+
+        @media(max-width:767px) {
+            #navbar .dropdown-menu {
+                max-height: none;
+                padding-left: 55px;
+            }
+        }
+
+        .visible-lg-span {
+            display: none;
+        }
+
+        @media(min-width:768px) {
+            #rb-bootstrap-menu {
+                position: fixed;
+                top: 0;
+                width: 100%;
+            }
+
+            #rb-bootstrap-menu + .container {
+                margin-top: 85px;
+            }           
+
+            #right-navbar {
+                display: flex !important; 
+                justify-content: right; 
+                align-items: center
+            }
+        }
+
+        @media(min-width:992px) {
+            .visible-lg-span {
+                display: inline;
+            }
+        }
+
+        #navbar .dropdown-menu a small {
+            word-break: normal;
+            white-space: break-spaces;
+        }
+
+        .cart-icon-badge {
+            font-weight: bold;
+            position:absolute;
+            right: -10px;
+            top: -5px;
+            background-color: #FAF7F7;
+            color: #ed174f
+        }
+
+        .cart-icon-container {
+            position: relative;
+            width: 70px
+        }
+
+    </style>
+    <asp:ContentPlaceHolder ID="cphHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server" id="frmMain">
+        <div id="rb-bootstrap-menu"class="navbar navbar-default navbar-static-top" role="navigation">
+
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="headerLogo" style="display: inline;">
+                        <a href="default.aspx">
+                            <span class="logoContainer">
+                                <img src="./img/BrandLogo_RED.png" alt="Redbud Logo" class="logo" />
+                            </span>
+                        </a>
+                    </div>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder" style="top: 15px;">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-menubuilder" id="right-navbar">
+                    
+                    <ul id="navbar" class="nav navbar-nav navbar-right" >
+                        <li id="mnuHome" runat="server" class="">
+                            <a href="default.aspx"><i class="fas fa-shopping-basket fa-lg visible-lg-span" style="padding-right: 10px;"></i>Shop</a>
+                        </li>
+                        <li class="divider-vertical"></li>
+                        <li id="mnuOrder" runat="server" class="">
+                            <a href="order.aspx"><i class="fas fa-archive fa-lg visible-lg-span" style="padding-right: 10px;"></i>My Orders</a>
+                        </li>
+                        <!-- #Removed on clients request  -->
+                        <!--
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown" id="mnuShop" runat="server">
+                            <a class="dropdown-toggle" data-toggle="dropdown" style="cursor: pointer;">
+                                <i class="fas fa-shopping-basket fa-lg visible-lg-span" style="padding-right: 10px;"></i>Shop
+                                    <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" id="center" role="menu" style="width: 300px;">
+                                <li>
+                                    <a href="/how-to-order.aspx" class="btn btn-success" style="color: #fff !important; margin: 3px 20px;">How to Order</a>
+                                </li>
+                                <li class="divider"></li>
+                                <asp:Repeater ID="rptActiveCatalogs" runat="server">
+                                    <ItemTemplate>
+                                        <li>
+                                            <a class="text-link text-left text-dark" style="display: block; padding: 3px 20px; font-weight: 400; line-height: 1.4285;" href="/shop.aspx?filter=9&id=<%#Eval("CatalogID")%>"><%#Eval("CatalogName")%><br />
+                                                <small style="word-break: normal;"><strong><%#Eval("ShipDates")%></strong></small></a>
+                                        </li>
+                                        <li class="divider"></li>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </ul>
+                        </li>
+                         -->
+                       
+
+                        <li class="divider-vertical"></li>
+                        <li class="dropdown" id="mnuAccount" runat="server">
+                            <a class="dropdown-toggle" id="mnuAccountDropdown" data-toggle="dropdown" style="cursor: pointer;">
+                                <i class="fas fa-user-circle fa-lg visible-lg-span" style="padding-right: 10px;"></i>My Profile
+                                    <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li id="mnuResources" runat="server">
+                                    <a href="resources.aspx">Staff Resources</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="account.aspx" title="Edit your account settings">Profile</a></li>
+                                <li class="divider"></li>
+                                <li><a href="changepassword.aspx" title="Change your password">Change Password</a></li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="logout.aspx" title="Logout">Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div  class="nav navbar-nav navbar-right ml-4 mx-4 cart-icon-container">
+                        <a href="cart.aspx">
+                            <img src="img/shopping_cart.png" style="height: 70px"/>
+                            <span class="badge cart-icon-badge" runat="server" id="supCartTotal">0</span>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <asp:Literal Text="" ID="litMessage" runat="server" />
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer no-print" style="padding-top: 5px;">
+            <div class="container-fluid">
+                <div class="row">
+                    <p class="mt-4 mb-3 text-center text-white"><span style="display: inline-block; margin: 0 5px 0 5px;">Phone: 1-888-733-2830</span>   |  <span style="display: inline-block; margin: 0 5px 0 5px;">Fax: 1-888-733-2850</span>   | <span style="display: inline-block; margin: 0 5px 0 5px;">Email: sales@redbud.com</span>   |  <span style="display: inline-block; margin: 0 5px 0 5px;">Copyright &copy; Redbud <%= DateTime.Now.Year.ToString() %></span> </p>
+                </div>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/moment.min.js"></script>
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/lightbox.js"></script>
+        <script>
+            lightbox.option({
+                'resizeDuration': 200
+            })
+        </script>
+        <asp:ContentPlaceHolder ID="cphScript" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

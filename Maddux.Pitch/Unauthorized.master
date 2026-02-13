@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Unauthorized.master.cs" Inherits="Maddux.Pitch.Unauthorized" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Redbud | Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Redbud" />
+    <meta property="og:type" content="website" />
+    <meta id="ogUrl" runat="server" property="og:url" content="" />
+    <meta id="ogImage" runat="server" property="og:image" content="" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/fontawesome-all.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <link href="css/fonts.css" rel="stylesheet" />
+    <link href="css/redbud.css" rel="stylesheet" />
+    <style>
+        /* Media query for small screens */
+        @media only screen and (max-width: 576px) {
+            .default-page-shop {
+                display: none !important; /* Hide the element on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar navbar-expand navbar-light pt-4">
+        <div class="container" style="padding-top: 55px; display: flex; justify-content: center;">
+            <a href="/login.aspx">
+                <img src="img/Redbud_Logo.svg" alt="Redbud Logo" title="Redbud Logo" style="height: 126.5px;" />
+            </a>
+        </div>
+    </header>
+    <div style="height: 20px"></div>
+    <div class="container-fluid border-bottom border-dark">
+        <asp:ContentPlaceHolder ID="cphForm" runat="server"></asp:ContentPlaceHolder>
+    </div>
+    <div class="redbud-margin">
+        <div class="container-fluid">
+            <footer class="mt-5 ">
+                <div class="row">
+                    <div class="col-12 d-flex">
+                        <img src="img/Redbud_black_logo.png" alt="Redbud" title="Redbud" class="me-4 mb-2 align-self-center">
+                        <p class="ms-400 fs-20 mb-0 align-self-center">Plant a Little Passion</p>
+                    </div>
+                </div>
+                <div class="row my-4 justify-content-between">
+                    <div class="col-auto">
+                        <a class="nav-link px-0 py-3 mb-0 ms-250 fs-20" href="tel:1-888-733-2830">Phone: 1-888-733-2830</a>
+                    </div>
+                    <div class="col-auto">
+                        <p class="px-0 py-3 mb-0 ms-250 fs-20">Fax: 1-888-733-2850</p>
+                    </div>
+                    <div class="col-auto">
+                        <a class="nav-link px-0 py-3 mb-0 ms-250 fs-20" href="mailto:sales@redbud.com">Email: sales@redbud.com</a>
+                    </div>
+                    <div class="col-auto">
+                        <p class="px-0 py-3 mb-0 ms-250 fs-20">Copyright &copy; Redbud <%= DateTime.Now.Year.ToString() %></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder ID="cphScript" runat="server"></asp:ContentPlaceHolder>
+
+</body>
+</html>

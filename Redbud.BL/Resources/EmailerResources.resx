@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EXCELContentType" xml:space="preserve">
+    <value>application/vnd.xls</value>
+  </data>
+  <data name="OrderConfirmationEmailBody" xml:space="preserve">
+    <value>Dear {0},
+
+Please find attached your detailed order confirmation for Order  #{1}.
+
+Please review the order and shipping date, and contact us if you have any questions.
+
+</value>
+  </data>
+  <data name="OrderConfirmationEmailSubject" xml:space="preserve">
+    <value>Redbud – Order confirmation for Order # {0}</value>
+  </data>
+  <data name="PackingSlipEmailBody" xml:space="preserve">
+    <value>Dear {0},
+
+Please find attached the packing slip for Shipment #{1}.
+
+If you require a more detailed tracking, please contact our office.
+</value>
+  </data>
+  <data name="PackingSlipEmailSubject" xml:space="preserve">
+    <value>Redbud – Packing slip for Shipment # {0}</value>
+  </data>
+  <data name="PDFContentType" xml:space="preserve">
+    <value>application/pdf</value>
+  </data>
+  <data name="PickSheetEmailBody" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PickSheetEmailSubject" xml:space="preserve">
+    <value>Redbud – Pick sheet for Order# {0}</value>
+  </data>
+  <data name="SendInvoiceEmailBody" xml:space="preserve">
+    <value>Dear {0},
+
+Please find attached the invoice for Shipment #{1}.
+
+If you have any questions, please contact our office.
+</value>
+  </data>
+  <data name="SendInvoiceEmailSubject" xml:space="preserve">
+    <value>Redbud – Invoice for Shipment  {0}</value>
+  </data>
+  <data name="EmailFooter" xml:space="preserve">
+    <value>&lt;a href='https://www.redbud.com'&gt;Login to the Redbud.com to view and manage your account.&lt;/a&gt;
+
+Sincerely,
+The Redbud Admin Team
+&lt;img src="https://catch.redbud.com/img/Redbud_email.jpg" /&gt;
+tel: &lt;a href='tel:1.888.733.2830'&gt;1.888.733.2830&lt;/a&gt; / fax: 1.888.733.2850
+email: &lt;a href='mailto:sales@redbud.com'&gt;sales@redbud.com&lt;/a&gt;
+website: &lt;a href='https://www.redbud.com'&gt;www.redbud.com&lt;/a&gt;</value>
+  </data>
+  <data name="OnlineOrderSubmissionBody" xml:space="preserve">
+    <value>Dear {0},
+
+Thank you for choosing Redbud.
+
+We have received your recent order submission (Order #{1}). You will receive a detailed order confirmation once we have processed your order. In the meantime, please contact us if you have any questions.</value>
+  </data>
+  <data name="OnlineOrderSubmissionCc" xml:space="preserve">
+    <value>onlineorders@redbud.com</value>
+  </data>
+  <data name="OnlineOrderSubmissionSubject" xml:space="preserve">
+    <value>Redbud – Online order submission</value>
+  </data>
+  <data name="ForgetPasswordEmail" xml:space="preserve">
+    <value>Dear {0},
+
+A request was received to send your login information for the Redbud website. Your login information is as follows:
+
+Email address: {1}
+Password: {2}
+
+Once you gain access to the website, you may change your password by clicking on Change Password under the My Account tab.</value>
+  </data>
+  <data name="ForgetPasswordEmailSubject" xml:space="preserve">
+    <value>Redbud – Your login information for the Redbud.com</value>
+  </data>
+  <data name="CreditMemoEmailBody" xml:space="preserve">
+    <value>Dear {0},
+
+Please find attached your credit memo #{1}.
+
+Please review the credit memo, and contact us if you have any questions.</value>
+  </data>
+  <data name="CreditMemoEmailSubject" xml:space="preserve">
+    <value>Redbud – Credit Memo # {0}</value>
+  </data>
+</root>

@@ -1,0 +1,992 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E92709C5-9C79-4A3D-A487-54DDD8F28A21}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Maddux.Catch</RootNamespace>
+    <AssemblyName>Maddux.Catch</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6.7\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.Core.1.5.0.5\lib\net45\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.PdfSharp, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlRenderer.PdfSharp.1.5.0.6\lib\net45\HtmlRenderer.PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.11\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.AspNetAuthenticator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.AspNetAuthenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.AutoFormat, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.AutoFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.AutoRename, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.AutoRename.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.BasicAuthenticator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.BasicAuthenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.ExternalAuthenticator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.ExternalAuthenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.Favorites, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.Favorites.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.History, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.History.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.IpAuthenticator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.IpAuthenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.SessionAuthenticator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.SessionAuthenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="MoxieManager.Plugins.Uploaded, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Content\moxieRefFiles\MoxieManager.Plugins.Uploaded.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=106.0.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.10.1\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlClient, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.1\lib\net451\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="calllist\calllist.aspx" />
+    <Content Include="campaign\campaigndetail.aspx" />
+    <Content Include="campaign\campaigns.aspx" />
+    <Content Include="categories\categorydetail.aspx" />
+    <Content Include="categories\categorylist.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Core.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.AspNetAuthenticator.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.AutoFormat.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.AutoRename.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.BasicAuthenticator.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.ExternalAuthenticator.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.Favorites.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.History.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.IpAuthenticator.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.SessionAuthenticator.dll" />
+    <Content Include="Content\moxieRefFiles\MoxieManager.Plugins.Uploaded.dll" />
+    <Content Include="credit\creditDetail.aspx" />
+    <Content Include="credit\creditMemoPrint.aspx" />
+    <Content Include="credit\search.aspx" />
+    <Content Include="css\AdminLTE.css" />
+    <Content Include="css\AdminLTE.min.css" />
+    <Content Include="css\bootstrap-multiselect.css" />
+    <Content Include="css\catch-style.css" />
+    <Content Include="css\extra.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\bootstrap-theme.css" />
+    <Content Include="css\bootstrap-theme.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\maddux.css" />
+    <Content Include="css\pagination.css" />
+    <Content Include="css\print-css.css" />
+    <Content Include="css\rbstyle.css" />
+    <Content Include="css\skins\skin-red-light.css" />
+    <Content Include="css\skins\skin-red-light.min.css" />
+    <Content Include="css\skins\skin-red.css" />
+    <Content Include="css\skins\skin-red.min.css" />
+    <Content Include="css\skins\_all-skins.css" />
+    <Content Include="css\skins\_all-skins.min.css" />
+    <Content Include="css\swipebox.css" />
+    <Content Include="css\tinyMCE.css" />
+    <Content Include="customer\associationdetail.aspx" />
+    <Content Include="customer\associations.aspx" />
+    <Content Include="customer\contactdetail.aspx" />
+    <Content Include="customer\customerdetail.aspx" />
+    <Content Include="customer\customerlist.aspx" />
+    <Content Include="customer\merge.aspx" />
+    <Content Include="customer\myaccountactivity.aspx" />
+    <Content Include="customer\new-association.aspx" />
+    <Content Include="customer\search.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="Entity\DataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\DataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="error.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="forgotpwd.aspx" />
+    <Content Include="freight\default.aspx" />
+    <Content Include="freight\edit.aspx" />
+    <Content Include="global.asax" />
+    <Content Include="img\BrandLogo.png" />
+    <Content Include="img\BrandLogo_RED.png" />
+    <Content Include="img\DayRossLogo.png" />
+    <Content Include="img\Everett.jpg" />
+    <Content Include="img\exclamation-red.gif" />
+    <Content Include="img\LoginLogo.png" />
+    <Content Include="img\program-not-available.jpg" />
+    <Content Include="img\Redbud_email.jpg" />
+    <Content Include="img\Redbud_logo_black.png" />
+    <Content Include="img\userf-160x160.png" />
+    <Content Include="img\userm-160x160.png" />
+    <Content Include="journal\journaldetail.aspx" />
+    <Content Include="journal\myfollowups.aspx" />
+    <Content Include="js\app.js" />
+    <Content Include="js\app.min.js" />
+    <Content Include="js\extra.js" />
+    <Content Include="js\bootstrap-multiselect.js" />
+    <Content Include="js\jquery-2.2.3.min.js" />
+    <Content Include="js\jquery.swipebox.js" />
+    <Content Include="js\jquery.usphone.js" />
+    <Content Include="js\moment.min.js" />
+    <Content Include="js\moxiemanager\data\cache\readme.txt" />
+    <Content Include="js\moxiemanager\data\files\readme.txt" />
+    <Content Include="js\moxiemanager\data\files\teddybear.jpg" />
+    <Content Include="js\moxiemanager\data\logs\readme.txt" />
+    <Content Include="js\moxiemanager\data\storage\readme.txt" />
+    <Content Include="js\moxiemanager\data\temp\readme.txt" />
+    <Content Include="js\moxiemanager\default.aspx" />
+    <Content Include="js\moxiemanager\editor_plugin.js" />
+    <Content Include="js\moxiemanager\editor_plugin_src.js" />
+    <Content Include="js\moxiemanager\js\Moxie.swf" />
+    <Content Include="js\moxiemanager\js\moxman.api.min.js" />
+    <Content Include="js\moxiemanager\js\moxman.loader.min.js" />
+    <Content Include="js\moxiemanager\langs\en.js" />
+    <Content Include="js\moxiemanager\plugin.js" />
+    <Content Include="js\moxiemanager\plugin.min.js" />
+    <Content Include="js\moxiemanager\skins\lightgray\fonts\icomoon.svg" />
+    <Content Include="js\moxiemanager\skins\lightgray\img\ants.gif" />
+    <Content Include="js\moxiemanager\skins\lightgray\img\insertfile.gif" />
+    <Content Include="js\moxiemanager\skins\lightgray\img\loader.gif" />
+    <Content Include="js\moxiemanager\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="js\moxiemanager\skins\lightgray\skin.min.css" />
+    <Content Include="js\tinyMCE.js" />
+    <Content Include="js\utils.js" />
+    <Content Include="login.aspx" />
+    <Content Include="js\ai.0.15.0-build58334.js" />
+    <Content Include="js\ai.0.15.0-build58334.min.js" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap-theme.min.css.map" />
+    <Content Include="css\bootstrap-theme.css.map" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="logout.aspx" />
+    <Content Include="mailing\mailinglabels.aspx" />
+    <Content Include="mailing\newsletters.aspx" />
+    <Content Include="mailing\NewsletterTemplate.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="myaccount.aspx" />
+    <Content Include="Newsletters\FallCollectionAndMyAccount.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="order\additem.aspx" />
+    <Content Include="order\bill-of-lading.aspx" />
+    <Content Include="order\confirmation.aspx" />
+    <Content Include="order\download.aspx" />
+    <Content Include="order\email-packing-slip.aspx" />
+    <Content Include="order\myorders.aspx" />
+    <Content Include="order\orderdetail.aspx" />
+    <Content Include="order\packing-slip.aspx" />
+    <Content Include="order\picksheet.aspx" />
+    <Content Include="order\search.aspx" />
+    <Content Include="catalogs\catalogdetail.aspx" />
+    <Content Include="catalogs\cataloglist.aspx" />
+    <Content Include="pages\default.aspx" />
+    <Content Include="pages\edit.aspx" />
+    <Content Include="products\product.aspx" />
+    <Content Include="products\productDetail.aspx" />
+    <Content Include="products\productlist.aspx" />
+    <Content Include="products\programdetail.aspx" />
+    <Content Include="products\programlist.aspx" />
+    <Content Include="js\moxiemanager\api.ashx" />
+    <Content Include="js\moxiemanager\data\storage\user.1.json" />
+    <Content Include="js\moxiemanager\data\storage\user.205.json" />
+    <Content Include="js\moxiemanager\data\storage\user.James.json" />
+    <Content Include="js\moxiemanager\data\storage\user.pas ad.json" />
+    <Content Include="js\moxiemanager\data\storage\user.Region Administrator %28Halifax%29.json" />
+    <Content Include="js\moxiemanager\data\storage\user.Webility.json" />
+    <Content Include="js\moxiemanager\skins\lightgray\fonts\icomoon.eot" />
+    <Content Include="js\moxiemanager\skins\lightgray\fonts\icomoon.ttf" />
+    <Content Include="js\moxiemanager\skins\lightgray\fonts\icomoon.woff" />
+    <Content Include="js\moxiemanager\Web.config" />
+    <Content Include="App_Data\templates\Redbud_Product_Upload_Template.xlsx" />
+    <Content Include="calllist\requests\GetMembershipForSelectedCampaigns.ashx" />
+    <Content Include="order\request\GetProductPhotos.ashx" />
+    <Content Include="campaign\request\GetCampaignDetail.ashx" />
+    <Content Include="App_Data\po\POTemplate.xlsx" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="chart.ashx" />
+    <Content Include="chartThreeYears.ashx" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="products\shipdate.aspx" />
+    <Content Include="purchaseorder\manageorders.aspx" />
+    <Content Include="purchaseorder\purchaseorderdetail.aspx" />
+    <Content Include="purchaseorder\purchaseorders.aspx" />
+    <Content Include="racks\rackdetail.aspx" />
+    <Content Include="racks\racklist.aspx" />
+    <Content Include="js\date.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="shipping\batch-report.aspx" />
+    <Content Include="shipping\invoice.aspx" />
+    <Content Include="shipping\myshipments.aspx" />
+    <Content Include="shipping\search.aspx" />
+    <Content Include="shipping\shipmentdetail.aspx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="shipping\request\print-batch-report.ashx" />
+    <Content Include="shipping\request\packing-slip-batch-print.ashx" />
+    <None Include="Web References\wsFCSBugTracker\FCSBugTracker.disco" />
+    <Content Include="users\userdetail.aspx" />
+    <Content Include="users\userlist.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="calllist\calllist.aspx.cs">
+      <DependentUpon>calllist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="calllist\calllist.aspx.designer.cs">
+      <DependentUpon>calllist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="calllist\requests\GetMembershipForSelectedCampaigns.ashx.cs">
+      <DependentUpon>GetMembershipForSelectedCampaigns.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="campaign\campaigndetail.aspx.cs">
+      <DependentUpon>campaigndetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="campaign\campaigndetail.aspx.designer.cs">
+      <DependentUpon>campaigndetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="campaign\campaigns.aspx.cs">
+      <DependentUpon>campaigns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="campaign\campaigns.aspx.designer.cs">
+      <DependentUpon>campaigns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="campaign\request\GetCampaignDetail.ashx.cs">
+      <DependentUpon>GetCampaignDetail.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="categories\categorydetail.aspx.cs">
+      <DependentUpon>categorydetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="categories\categorydetail.aspx.designer.cs">
+      <DependentUpon>categorydetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="categories\categorylist.aspx.cs">
+      <DependentUpon>categorylist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="categories\categorylist.aspx.designer.cs">
+      <DependentUpon>categorylist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chartThreeYears.ashx.cs">
+      <DependentUpon>chartThreeYears.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="chart.ashx.cs">
+      <DependentUpon>chart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="credit\creditDetail.aspx.cs">
+      <DependentUpon>creditDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="credit\creditDetail.aspx.designer.cs">
+      <DependentUpon>creditDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="credit\creditMemoPrint.aspx.cs">
+      <DependentUpon>creditMemoPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="credit\creditMemoPrint.aspx.designer.cs">
+      <DependentUpon>creditMemoPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\associationdetail.aspx.cs">
+      <DependentUpon>associationdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\associationdetail.aspx.designer.cs">
+      <DependentUpon>associationdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\contactdetail.aspx.cs">
+      <DependentUpon>contactdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\contactdetail.aspx.designer.cs">
+      <DependentUpon>contactdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\customerdetail.aspx.cs">
+      <DependentUpon>customerdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\customerdetail.aspx.designer.cs">
+      <DependentUpon>customerdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\customerlist.aspx.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\customerlist.aspx.designer.cs">
+      <DependentUpon>customerlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\merge.aspx.cs">
+      <DependentUpon>merge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\merge.aspx.designer.cs">
+      <DependentUpon>merge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\new-association.aspx.cs">
+      <DependentUpon>new-association.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\new-association.aspx.designer.cs">
+      <DependentUpon>new-association.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FCS\FCSErrorHandler.cs" />
+    <Compile Include="freight\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="freight\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="freight\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="freight\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="global.asax.cs">
+      <DependentUpon>global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Helpers\RegionHelper.cs" />
+    <Compile Include="journal\journaldetail.aspx.cs">
+      <DependentUpon>journaldetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="journal\journaldetail.aspx.designer.cs">
+      <DependentUpon>journaldetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalClasses\AppSession.cs" />
+    <Compile Include="credit\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="credit\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\associations.aspx.cs">
+      <DependentUpon>associations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\associations.aspx.designer.cs">
+      <DependentUpon>associations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\myaccountactivity.aspx.cs">
+      <DependentUpon>myaccountactivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\myaccountactivity.aspx.designer.cs">
+      <DependentUpon>myaccountactivity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="customer\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="customer\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpwd.aspx.cs">
+      <DependentUpon>forgotpwd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpwd.aspx.designer.cs">
+      <DependentUpon>forgotpwd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="journal\myfollowups.aspx.cs">
+      <DependentUpon>myfollowups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="journal\myfollowups.aspx.designer.cs">
+      <DependentUpon>myfollowups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalClasses\Utils.cs" />
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maddux.Catch.Master.cs">
+      <DependentUpon>Maddux.Catch.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maddux.Catch.Master.designer.cs">
+      <DependentUpon>Maddux.Catch.Master</DependentUpon>
+    </Compile>
+    <Compile Include="mailing\mailinglabels.aspx.cs">
+      <DependentUpon>mailinglabels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mailing\mailinglabels.aspx.designer.cs">
+      <DependentUpon>mailinglabels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="mailing\newsletters.aspx.cs">
+      <DependentUpon>newsletters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="mailing\newsletters.aspx.designer.cs">
+      <DependentUpon>newsletters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="myaccount.aspx.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="myaccount.aspx.designer.cs">
+      <DependentUpon>myaccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\additem.aspx.cs">
+      <DependentUpon>additem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\additem.aspx.designer.cs">
+      <DependentUpon>additem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\bill-of-lading.aspx.cs">
+      <DependentUpon>bill-of-lading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\bill-of-lading.aspx.designer.cs">
+      <DependentUpon>bill-of-lading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\confirmation.aspx.cs">
+      <DependentUpon>confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\confirmation.aspx.designer.cs">
+      <DependentUpon>confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\download.aspx.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\download.aspx.designer.cs">
+      <DependentUpon>download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\email-packing-slip.aspx.cs">
+      <DependentUpon>email-packing-slip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\email-packing-slip.aspx.designer.cs">
+      <DependentUpon>email-packing-slip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\myorders.aspx.cs">
+      <DependentUpon>myorders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\myorders.aspx.designer.cs">
+      <DependentUpon>myorders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\orderdetail.aspx.cs">
+      <DependentUpon>orderdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\orderdetail.aspx.designer.cs">
+      <DependentUpon>orderdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\packing-slip.aspx.cs">
+      <DependentUpon>packing-slip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\packing-slip.aspx.designer.cs">
+      <DependentUpon>packing-slip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\picksheet.aspx.cs">
+      <DependentUpon>picksheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\picksheet.aspx.designer.cs">
+      <DependentUpon>picksheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order\request\GetProductPhotos.ashx.cs">
+      <DependentUpon>GetProductPhotos.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="order\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalogs\catalogdetail.aspx.cs">
+      <DependentUpon>catalogdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catalogs\catalogdetail.aspx.designer.cs">
+      <DependentUpon>catalogdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="catalogs\cataloglist.aspx.cs">
+      <DependentUpon>cataloglist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="catalogs\cataloglist.aspx.designer.cs">
+      <DependentUpon>cataloglist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\edit.aspx.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\edit.aspx.designer.cs">
+      <DependentUpon>edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\product.aspx.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\product.aspx.designer.cs">
+      <DependentUpon>product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\productDetail.aspx.cs">
+      <DependentUpon>productDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\productDetail.aspx.designer.cs">
+      <DependentUpon>productDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\productlist.aspx.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\productlist.aspx.designer.cs">
+      <DependentUpon>productlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\programdetail.aspx.cs">
+      <DependentUpon>programdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\programdetail.aspx.designer.cs">
+      <DependentUpon>programdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\programlist.aspx.cs">
+      <DependentUpon>programlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\programlist.aspx.designer.cs">
+      <DependentUpon>programlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products\shipdate.aspx.cs">
+      <DependentUpon>shipdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products\shipdate.aspx.designer.cs">
+      <DependentUpon>shipdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseorder\manageorders.aspx.cs">
+      <DependentUpon>manageorders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="purchaseorder\manageorders.aspx.designer.cs">
+      <DependentUpon>manageorders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseorder\purchaseorderdetail.aspx.cs">
+      <DependentUpon>purchaseorderdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="purchaseorder\purchaseorderdetail.aspx.designer.cs">
+      <DependentUpon>purchaseorderdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="purchaseorder\purchaseorders.aspx.cs">
+      <DependentUpon>purchaseorders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="purchaseorder\purchaseorders.aspx.designer.cs">
+      <DependentUpon>purchaseorders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="racks\rackdetail.aspx.cs">
+      <DependentUpon>rackdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="racks\rackdetail.aspx.designer.cs">
+      <DependentUpon>rackdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="racks\racklist.aspx.cs">
+      <DependentUpon>racklist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="racks\racklist.aspx.designer.cs">
+      <DependentUpon>racklist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\batch-report.aspx.cs">
+      <DependentUpon>batch-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\batch-report.aspx.designer.cs">
+      <DependentUpon>batch-report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\invoice.aspx.cs">
+      <DependentUpon>invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shipping\invoice.aspx.designer.cs">
+      <DependentUpon>invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\myshipments.aspx.cs">
+      <DependentUpon>myshipments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shipping\myshipments.aspx.designer.cs">
+      <DependentUpon>myshipments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\request\packing-slip-batch-print.ashx.cs">
+      <DependentUpon>packing-slip-batch-print.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\request\print-batch-report.ashx.cs">
+      <DependentUpon>print-batch-report.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shipping\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\shipmentdetail.aspx.cs">
+      <DependentUpon>shipmentdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="shipping\shipmentdetail.aspx.designer.cs">
+      <DependentUpon>shipmentdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="users\userdetail.aspx.cs">
+      <DependentUpon>userdetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users\userdetail.aspx.designer.cs">
+      <DependentUpon>userdetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="users\userlist.aspx.cs">
+      <DependentUpon>userlist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="users\userlist.aspx.designer.cs">
+      <DependentUpon>userlist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsFCSBugTracker\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Maddux.Catch.Master" />
+    <None Include="Properties\PublishProfiles\Maddux Catch.pubxml" />
+    <None Include="Web References\wsFCSBugTracker\FCSBugTracker.wsdl" />
+    <None Include="Web References\wsFCSBugTracker\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web References\wsFCSBugTracker\SubmissionResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://ws.fortesolutions.ca/bt/FCSBugTracker.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsFCSBugTracker\</RelPath>
+      <UpdateFromURL>http://ws.fortesolutions.ca/bt/FCSBugTracker.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Maddux_Catch_wsFCSBugTracker_IssueReportingServices</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Redbud.BL\Redbud.BL.csproj">
+      <Project>{3bda5bd7-bc04-470b-922c-5ac4b2a4e9a6}</Project>
+      <Name>Redbud.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\bol\" />
+    <Folder Include="App_Data\temp\" />
+    <Folder Include="Reports\" />
+    <Folder Include="uploads\files\pages\" />
+    <Folder Include="uploads\files\products\" />
+    <Folder Include="uploads\files\racks\" />
+    <Folder Include="uploads\temp\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50552</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50553/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties content_4bootstrap_1min_1css_1map__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

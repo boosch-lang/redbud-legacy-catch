@@ -1,0 +1,81 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Login.master.cs" Inherits="Maddux.Pitch.Login" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Redbud | Login</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/loginstyle.css" />
+    <style>
+        input[type="checkbox"] + label {
+            padding-left: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="login-logo">
+                <img src="img/LoginLogo.png" alt="Redbud" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1"></div>
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-10">
+                <asp:ContentPlaceHolder ID="cphForm" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <div class="col-xl-4 col-lg-3 col-md-3 col-sm-2 col-1"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="col-xs-12 text-sm-left text-md-right">
+            <!-- <a href="#" style="color:#fff;">Terms of Use</a> |  -->
+            <span style="padding-left: 10px; padding-right: 10px;">Copyright &copy;
+                <asp:Label ID="lblCopyrightYear" runat="server" Text="2018"></asp:Label>
+                Redbud | 
+                <a href="#" title="privacy" style="color: #fff;" data-toggle="modal" data-target="#modalView" data-remote="false">Privacy             
+                </a>
+            </span>
+        </div>
+    </footer>
+    <!-- Member detail modal -->
+    <div class="modal fade" id="modalView" tabindex="-1" role="dialog" aria-labelledby="modalView" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div style="background-color: #ed174c!important" class="modal-header text-white">
+                    <h4 class="modal-title font-weight-bold" id="modalViewTitle">Privacy
+                        
+                    </h4>
+
+
+                </div>
+                <div id="divModalViewBody" class="modal-body">
+                    <h4 class="font-weight-bold">Privacy Statement</h4>
+                    <p>This Redbud Supply Inc. ('Redbud') Privacy Statement is based on the Personal Information Protection and Electronic Documents Act (the 'Act') and provides a general description of Redbud's accountability for the collection, use and disclosure of personal information. Upon request, Redbud will make available information about its policies and practices relating to Redbud's handling of personal information.</p>
+                    <h5 class="font-weight-bold">What is Personal Information?</h5>
+                    <p>Personal information is virtually any information about an identifiable individual.</p>
+                    <h5 class="font-weight-bold">Collection, Use and Disclosure of Personal Information</h5>
+                    <p>Redbud collects only the personal information required to serve its customers. Redbud safeguards this information by limiting access to ensure your privacy. Redbud may enter into contracts with agents, contractors and other third parties for services that you may require, and may disclose your personal information to a third party for the purposes of providing you with quality service. If so, Redbud will take steps to ensure that these third parties will keep your information confidential.</p>
+                    <p>Redbud strives to maintain accurate and current records related to personal information, and you may contact Redbud at any time to ensure that our records for you are accurate and up to date. Redbud retains your personal information only as long as it is required for our business relationship or as required by law.</p>
+                    <h5 class="font-weight-bold">Consent</h5>
+                    <p>The collection, use and disclosure of your personal information requires your consent. Consent may be expressly given, or it may be implied. Through your use of Redbud's products or services, Redbud implies your consent to all of its collection, use, and disclosure practices. Disclosure without your consent may occur if requested by law enforcement agencies or to the extent necessary to comply with legal or regulatory requirements. You may withdraw or modify your consent at any time, but any such withdrawal or modification of consent may impact Redbud's ability to serve you.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder ID="cphScript" runat="server"></asp:ContentPlaceHolder>
+
+</body>
+</html>

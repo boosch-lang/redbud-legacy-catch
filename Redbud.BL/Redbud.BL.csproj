@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BDA5BD7-BC04-470B-922C-5AC4B2A4E9A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Redbud.BL</RootNamespace>
+    <AssemblyName>Redbud.BL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.23.1\lib\net461\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.23.1\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.23.1\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.23.1\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SendGrid, Version=9.29.3.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.29.3\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
+      <HintPath>..\packages\starkbank-ecdsa.1.3.3\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.23.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.23.1\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DL\ActivityLog.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Association.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\AssociationCatalog.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\AssociationResult.cs" />
+    <Compile Include="DL\Associations_partial.cs" />
+    <Compile Include="DL\Campaign.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\CampaignShipdate.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Campaign_partial.cs" />
+    <Compile Include="DL\CatalogResult.cs" />
+    <Compile Include="DL\RackRack.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\RackRack_partial.cs" />
+    <Compile Include="DL\vwMyFollowup_partial.cs" />
+    <Compile Include="DL\Configuration.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Contact.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Country.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Credit.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\CreditItem.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\CreditItem_partial.cs" />
+    <Compile Include="DL\Credit_partial.cs" />
+    <Compile Include="DL\Customer.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\CustomerAssc.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\CustomersSub.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Customer_partial.cs" />
+    <Compile Include="DL\DeliveryHub.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\FreightCharge.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\InvoicePostBatch.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\InvoicePostBatchItem.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Journal.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\JournalDetail.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Lookup.cs" />
+    <Compile Include="DL\Order.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\OrderHistory.cs" />
+    <Compile Include="DL\OrderItem.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\OrderItem_partial.cs" />
+    <Compile Include="DL\OrderRack.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\OrderRack_partial.cs" />
+    <Compile Include="DL\Order_partial.cs" />
+    <Compile Include="DL\Photo.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Product.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductCatalog.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductCatalogGroup.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductCatalogRack.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductCatalogRack_partial.cs" />
+    <Compile Include="DL\ProductCatalogShipDate.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductCatalogShipDate_partial.cs" />
+    <Compile Include="DL\ProductCatalog_partial.cs" />
+    <Compile Include="DL\ProductCollection.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductProgram.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductProgramShipDate.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductRackShipDate.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ProductRackShipDate_partial.cs" />
+    <Compile Include="DL\ProductShipDate_partial.cs" />
+    <Compile Include="DL\PurchaseOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\PurchaseOrder_partial.cs" />
+    <Compile Include="DL\QueryResult.cs" />
+    <Compile Include="DL\RackProduct.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\RackProduct_partial.cs" />
+    <Compile Include="DL\RedbudEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedbudEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\RedbudEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\RedbudEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RedbudEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Referral.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Shipment.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\ShipmentItem.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Shipment_partial.cs" />
+    <Compile Include="DL\State.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\StaticPage.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supCatalogClass.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supContactTitle.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supPaymentTerm.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supPaymentType.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\Supplier.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\SupplierContact.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supProductCategory.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supProductSubCategory.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supShippingMethod.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\supShippingRate.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\User.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\UserAssc.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\UserCatalog.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\UserState.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\User_partial.cs" />
+    <Compile Include="DL\vmCustomerDetail.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwAllCredit.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwAllOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwAllShipment.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwAsscwithCount.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCatalogExport.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwConfiguration.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCreditItem.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCreditItemSelector.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomer.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomerContact.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomerCredit.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomerDraftOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomerOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomersByAssociation.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomersByReferralSource.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomerShipment.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomerShippedOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwCustomerUnshippedOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwEmailAddressesAll.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwEmailAddressesAllUnGrouped.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwEmailAddressesCustomer.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwEmailAddressesSupplier.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwFollowup.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwInvoicePostBatch.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwJournal.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwJournal1.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwJournalsAndSupport.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMailer.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyAccountActivityLog.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyFollowup.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyOrders2.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyOrdersForReport.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyOrders_OLD.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyQuote.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyQuotesForReport.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyShipment.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyShipments2.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwMyShipmentsForReport.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwOpenJournal.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwOrderCatalog.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwOrderItem.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwOrderItemsForRenewal.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwOrderItemsQuantityShipped.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwOrderShipment.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwOverdueJournal.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwProduct.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwProductOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwProductShipment.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwProductsMain.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwProductSubProduct.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptBackOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptBidSheet.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptCreditMemo.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptCreditMemo1.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptOrderConfirmation.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptPackingSlip.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptPickSheet.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptProductCollection.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptPurchaseOrder.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwRptShipmentInvoice.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwShipment.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwShipmentCatalog.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwShipmentItem.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DL\vwUsersMain.cs">
+      <DependentUpon>RedbudEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Helpers\EmailSendHelper.cs" />
+    <Compile Include="Helpers\OrderHelper.cs" />
+    <Compile Include="HtmlToPdf.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\EmailerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmailerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ConfigurationUtils.cs" />
+    <Compile Include="Utils\Emailer.cs" />
+    <Compile Include="Utils\FCSAppUtils.cs" />
+    <Compile Include="Utils\FCSEncryption.cs" />
+    <Compile Include="Utils\FreightCalculator.cs" />
+    <Compile Include="Utils\JWTHelper.cs" />
+    <Compile Include="Utils\Recaptcha.cs" />
+    <Compile Include="Utils\StringTools.cs" />
+    <Compile Include="Utils\TaxUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="DL\RedbudEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RedbudEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DL\RedbudEntities.edmx.diagram">
+      <DependentUpon>RedbudEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\EmailerResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmailerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DL\RedbudEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RedbudEntities.edmx</DependentUpon>
+      <LastGenOutput>RedbudEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DL\RedbudEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RedbudEntities.edmx</DependentUpon>
+      <LastGenOutput>RedbudEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

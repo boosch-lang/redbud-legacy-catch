@@ -1,0 +1,515 @@
+html {
+	position: relative;
+	min-height: 100%;
+}
+.body {
+    font-family: Helvetica,Arial,Verdana,sans-serif !important;
+	margin-bottom: 120px;
+}
+
+.headerLogo div.logoContainer, .headerTitle {
+    display: inline-block;
+    float: left;
+    margin-left: 5px;
+}
+
+.headerLogo div.logoContainer {
+    height: 80px;
+    width: 356px;
+    margin-bottom: 5px;
+}
+
+img.logo {
+    content: url('http://localhost:50552/img/BrandLogo.png');
+}
+
+a:link {
+    color: #ed174f;
+    font-weight: normal;
+}
+
+a:visited {
+    color: #ed174f;
+    font-weight: normal;
+}
+
+a:hover {
+    color: blue;
+    font-weight: normal;
+}
+
+a:active {
+    color: #ed174f;
+    font-weight: normal !important;
+}
+
+#rb-bootstrap-menu.navbar-default .navbar-brand {
+    color: #000000 !important;
+    padding-bottom: 10px !important;
+}
+
+#rb-bootstrap-menu.navbar-default {
+    font-size: 16px !important;
+    background-color: white !important;
+    border-bottom-width: 0 !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+    border-bottom-color: #ed174f !important;
+    border-bottom-width: thick !important;
+    border-bottom-style: solid !important;
+}
+
+    #rb-bootstrap-menu.navbar-default .navbar-nav > li > a {
+        color: #ed174f !important;
+        background-color: #f8f8f8 !important;
+		padding-left:20px;
+		padding-right:20px;
+    }
+
+        #rb-bootstrap-menu.navbar-default .navbar-nav > li > a:hover,
+        #rb-bootstrap-menu.navbar-default .navbar-nav > li > a:focus {
+            color: #333333 !important;
+            background-color: #CFCFCF !important;
+        }
+
+    #rb-bootstrap-menu.navbar-default .navbar-nav > .active > a,
+    #rb-bootstrap-menu.navbar-default .navbar-nav > .active > a:hover,
+    #rb-bootstrap-menu.navbar-default .navbar-nav > .active > a:focus {
+        color: #FAF7F7 !important;
+        background-color: #ed174f !important;
+    }
+
+    #rb-bootstrap-menu.navbar-default .navbar-toggle {
+        border-color: #ed174f !important;
+    }
+
+        #rb-bootstrap-menu.navbar-default .navbar-toggle:hover,
+        #rb-bootstrap-menu.navbar-default .navbar-toggle:focus {
+            background-color: #ed174f !important;
+        }
+
+        #rb-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+            background-color: #ed174f !important;
+        }
+
+        #rb-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+        #rb-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+            background-color: #ffffff !important;
+        }
+
+#topbar {
+	top:0;
+	width:100%;
+	min-height:40px;
+	background-color: #f8f8f8;
+	color:#acaeb1;
+	margin:auto;
+	padding-top:5px;
+	text-align:left;
+	border-bottom-width:thin;
+	border-bottom-color:#acaeb1;
+	border-bottom-style:solid;
+}
+
+#navbar {
+    padding-top: 35px;
+}
+
+    #navbar .nav {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+@media only screen and (max-width : 768px) {
+    #navbar {
+        padding-top: 5px;
+    }
+
+    .nav {
+        margin-top: 0;
+    }
+
+    .navbar-collapse .nav > .divider-vertical {
+        display: none;
+    }
+}
+
+.navbar .divider-vertical {
+    height: 50px;
+    border-left: 1px solid #ed174f;
+}
+
+.navbar-inverse .divider-vertical {
+    border-right-color: #ed174f;
+    border-left-color: #ed174f;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    color: #fff !important;
+    text-decoration: none !important;
+    background-color: #ed174f !important;
+    outline: 0 !important;
+}
+
+.dropdown-menu li > a {
+    color: #ed174f !important;
+}
+
+    .dropdown-menu li > a:hover {
+        background-color: #cfcfcf !important;
+    }
+
+/*table settings*/
+table thead tr th {
+    background-color: #ed174f;
+    color: #fff;
+}
+.wrap-text {
+	word-wrap:break-word;
+	word-break:break-word;
+}
+table tfoot {
+    background: #a7a8a9;
+    color: #000;
+	font-weight:bold;
+}
+table.table-bordered tfoot td {
+	border-top: double 3px #000;
+}
+.table.table-responsive.borderless.table {
+	margin-bottom:0;
+}
+.table.table-responsive.borderless td, .borderless th {
+    border: none;
+	padding-left:0;
+}
+.grandtotal-bar {
+	background: #a7a8a9;
+	color:#000;
+	font-weight:bold;
+	text-align:right;
+	padding: 8px;
+}
+/*Panel settings*/
+.panel.panel-primary {
+	border-color: #ed174f;
+}
+.panel.panel-primary > .panel-heading {
+	color:#fff;
+	background: #ed174f;
+}
+.panel.panel-primary > .panel-body {
+	border-bottom-color: #ed174f;
+}
+.flex, .flex > div[class*='col-'] {  
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 0 auto;
+}
+/*Modal dialog settings*/
+.modal-header {
+    padding:9px 15px;
+    border-bottom:1px solid #eee;
+    background-color: #ed174f;
+	color: #fff;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+     border-top-left-radius: 5px;
+     border-top-right-radius: 5px;
+ }
+.modal-close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #f7faff;
+}
+.modal-close:hover,
+.modal-close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+button.modal-close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 50px;
+	line-height: 50px; /* Vertically center the text there */
+	color: #fff;
+	font-size:16px;
+	background-color: #222326 !important;
+}
+
+.bottom-buffer { 
+	margin-bottom:20px; 
+}
+.bottom-buffer-large {
+	margin-bottom:30px;
+}
+.bottom-buffer-extralarge {
+	margin-bottom:70px;
+}
+.bottom-buffer-small {
+	margin-bottom:10px;
+}
+.bottom-buffer-extrasmall {
+	margin-bottom:5px;
+}
+
+.top-buffer { 
+	margin-top:20px; 
+}
+.top-buffer-large {
+	margin-top:30px;
+}
+.top-buffer-small {
+	margin-top:10px;
+}
+.top-buffer-extrasmall {
+	margin-top:5px;
+}
+
+.input-form-label
+{
+	padding: 1px 0px 1px 0px;
+	margin-top: 10px;
+}
+.plain-label
+{
+	padding: 1px 0px 1px 0px;
+	margin-top: 10px;
+	font-weight:normal;
+}
+
+.no-border {
+    border: 0;
+    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
+}
+.hidden-table-col
+{
+	display:none;
+}
+.vertical-middle
+{
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+/*Checkbox list settings*/
+.radio.radiobuttonlist input[type="radio"],
+.checkbox.checkboxlist input[type="checkbox"]
+{
+	margin-left: 0;
+}
+.radio.radiobuttonlist label,
+.checkbox.checkboxlist label
+{
+	margin-bottom: 4px;
+	margin-left: 0;
+}
+
+/* Error Handling */
+.error input,
+input.error,
+.error textarea,
+textarea.error {
+  border-color: #c60f13;
+  background-color: rgba(198, 15, 19, 0.1); }
+  .error input:focus,
+  input.error:focus,
+  .error textarea:focus,
+  textarea.error:focus {
+    background: #fafafa;
+    border-color: #999999; }
+
+.error label,
+label.error,
+.error span,
+span.error {
+  color: #c60f13; }
+
+.error small,
+small.error,
+.error span,
+span.error_small {
+  display: block;
+  padding: 0.375em 0.25em;
+  margin-bottom: 1em;
+  font-size: 0.75em;
+  color: #c60f13; }
+
+/* Smallest devices (phones and up) */
+.text-xs-center {
+    text-align: center;
+}
+.text-xs-right {
+    text-align: right;
+}
+.text-xs-left {
+    text-align: left;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .text-sm-center {
+        text-align: center;
+    }
+    .text-sm-right {
+        text-align: right;
+    }
+    .text-sm-left {
+        text-align: left;
+    }
+	#topbar {
+		height:40px;
+		text-align:right;
+	}
+    .pull-right-lg {
+        float: right;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .text-md-center {
+        text-align: center;
+    }
+    .text-md-right {
+        text-align: right;
+    }
+    .text-md-left {
+        text-align: left;
+    }
+	#topbar {
+		height:40px;
+		text-align:right;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .text-lg-center {
+        text-align: center;
+    }
+    .text-lg-right {
+        text-align: right;
+    }
+    .text-lg-left {
+        text-align: left;
+    }
+	#topbar {
+		height:40px;
+		text-align:right;
+	}
+}
+/*Print media*/
+@media print {
+	.tab-content > .tab-pane {
+		display: block !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+	}
+	a[href]:after {
+		content: none !important;
+	}
+	
+	.no-print, .no-print *
+    {
+        display: none !important;
+    }
+    .container {
+        max-width: none!important;
+        width: 100%!important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .row {
+        margin-left: -1%;
+        margin-left: -1%;
+    }
+    [class*="col-"] {
+        float: left;
+        padding-left: 1%;
+        padding-right: 1%;
+    }
+    .col-sm-12,
+    .col-md-12,
+    .col-lg-12 {
+        width: 100%
+    }
+    .col-sm-11,
+    .col-md-11,
+    .col-lg-11 {
+        width: 91.66666667%
+    }
+    .col-sm-10,
+    .col-md-10,
+    .col-lg-10 {
+        width: 83.33333333%
+    }
+    .col-sm-9,
+    .col-md-9,
+    .col-lg-9 {
+        width: 75%
+    }
+    .col-sm-8,
+    .col-md-8,
+    .col-lg-8 {
+        width: 66.66666667%
+    }
+    .col-sm-7,
+    .col-md-7,
+    .col-lg-7 {
+        width: 58.33333333%
+    }
+    .col-sm-6,
+    .col-md-6,
+    .col-lg-6 {
+        width: 50%
+    }
+    .col-sm-5,
+    .col-md-5,
+    .col-lg-5 {
+        width: 41.66666667%
+    }
+    .col-sm-4,
+    .col-md-4,
+    .col-lg-4 {
+        width: 33.33333333%
+    }
+    .col-sm-3,
+    .col-md-3,
+    .col-lg-3 {
+        width: 25%
+    }
+    .col-sm-2,
+    .col-md-2,
+    .col-lg-2 {
+        width: 16.66666667%
+    }
+    .col-sm-1,
+    .col-md-1,
+    .col-lg-1 {
+        width: 8.33333333%
+    }
+}

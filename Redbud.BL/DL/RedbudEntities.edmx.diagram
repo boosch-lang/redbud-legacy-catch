@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f431f226829447b3b6bf16f2232a017b" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="MadduxModel.ActivityLog" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.AssociationCatalog" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Association" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Configuration" Width="1.5" PointX="13.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Contact" Width="1.5" PointX="3" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Country" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.CreditItem" Width="1.5" PointX="5.25" PointY="43.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Credit" Width="1.5" PointX="3" PointY="42.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.CustomerAssc" Width="1.5" PointX="6" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Customer" Width="3.25" PointX="0.75" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.CustomersSub" Width="1.5" PointX="3" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.InvoicePostBatch" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.InvoicePostBatchItem" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Journal" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.OrderItem" Width="1.5" PointX="11.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Order" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Photo" Width="1.5" PointX="6.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.ProductCatalog" Width="1.5" PointX="6.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.ProductCatalogGroup" Width="1.5" PointX="4.5" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.ProductCatalogRack" Width="2.125" PointX="9.25" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.ProductCollection" Width="1.5" PointX="15.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Product" Width="1.5" PointX="5" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.RackProduct" Width="1.5" PointX="15.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Shipment" Width="1.5" PointX="11.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.ShipmentItem" Width="1.5" PointX="13.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.State" Width="1.5" PointX="6.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supCatalogClass" Width="1.5" PointX="15.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supContactTitle" Width="1.5" PointX="15.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supPaymentTerm" Width="1.5" PointX="3.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supPaymentType" Width="1.5" PointX="3.75" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.SupplierContact" Width="1.5" PointX="9" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Supplier" Width="1.5" PointX="6.75" PointY="33.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supProductCategory" Width="1.5" PointX="4.5" PointY="39.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supProductSubCategory" Width="1.5" PointX="6.75" PointY="39.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supShippingMethod" Width="1.5" PointX="3.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.UserAssc" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.UserCatalog" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.User" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.UserState" Width="1.5" PointX="9" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.Referral" Width="1.5" PointX="15.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MadduxModel.supShippingRate" Width="1.5" PointX="15.75" PointY="15.75" IsExpanded="true" />
+        <AssociationConnector Association="MadduxModel.FK_CustomerAssc_Associations" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_UserAssc_Associations" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Contacts_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_CreditItems_Credits" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Credits_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_CustomerAssc_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_CustomersSub_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Journal_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Orders_Customers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_InvoicePostBatchItems_InvoicePostBatch" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Journal_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_OrderItems_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_OrderItems_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_ShipmentItems_OrderItems" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Orders_supPaymentTerms" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Orders_supPaymentTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Orders_supShippingMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_ProductCatalog_ProductCatalogGroup" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_ProductCatalogRack_ProductCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Products_ProductCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_UserCatalog_ProductCatalog" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Products_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Products_supProductSubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Shipment_supShippingMethod" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_ShipmentItems_Shipment" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_UserState_States" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_SupplierContacts_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_supProductSubCategory_supProductCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_UserAssc_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_UserCatalog_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_Users_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.FK_UserState_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="MadduxModel.ProductPhotos" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MadduxModel.vwAllCredit" Width="1.5" PointX="8.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwAllOrder" Width="1.5" PointX="8.375" PointY="16.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwAllShipment" Width="1.5" PointX="18.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwAsscwithCount" Width="1.5" PointX="18.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCatalogExport" Width="1.5" PointX="18.375" PointY="7.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwConfiguration" Width="1.5" PointX="18.375" PointY="13.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCreditItem" Width="1.5" PointX="13.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCreditItemSelector" Width="1.5" PointX="15.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomerContact" Width="1.5" PointX="17.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomerCredit" Width="1.5" PointX="19.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomerDraftOrder" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomerOrder" Width="1.5" PointX="20.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomer" Width="1.5" PointX="20.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomersByAssociation" Width="1.5" PointX="20.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomersByReferralSource" Width="1.5" PointX="8.375" PointY="20.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomerShipment" Width="1.5" PointX="21.375" PointY="18.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomerShippedOrder" Width="1.5" PointX="22.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwCustomerUnshippedOrder" Width="1.5" PointX="22.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwEmailAddressesAll" Width="1.5" PointX="22.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwEmailAddressesAllUnGrouped" Width="1.5" PointX="22.375" PointY="11.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwEmailAddressesCustomer" Width="1.5" PointX="22.375" PointY="14.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwEmailAddressesSupplier" Width="1.5" PointX="19.375" PointY="22.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwFollowup" Width="1.5" PointX="21.375" PointY="22.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwInvoicePostBatch" Width="1.5" PointX="13.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwJournal" Width="1.5" PointX="15.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwJournal1" Width="1.5" PointX="23.375" PointY="17.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwJournalsAndSupport" Width="1.5" PointX="23.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMailer" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyAccountActivityLog" Width="1.5" PointX="24.375" PointY="5.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyOrder" Width="1.5" PointX="25.375" PointY="16.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyOrders2" Width="1.5" PointX="17.375" PointY="25.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyOrdersForReport" Width="1.5" PointX="25.375" PointY="22.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyQuote" Width="1.5" PointX="26.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyQuotesForReport" Width="1.5" PointX="26.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyShipment" Width="1.5" PointX="26.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyShipments2" Width="1.5" PointX="25.375" PointY="26.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyShipmentsForReport" Width="1.5" PointX="27.375" PointY="13.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwOpenJournal" Width="1.5" PointX="27.375" PointY="17.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwOrderCatalog" Width="1.5" PointX="27.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwOrderItem" Width="1.5" PointX="27.375" PointY="27.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwOrderItemsForRenewal" Width="1.5" PointX="28.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwOrderItemsQuantityShipped" Width="1.5" PointX="28.375" PointY="6.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwOrderShipment" Width="1.5" PointX="28.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwOverdueJournal" Width="1.5" PointX="19.375" PointY="28.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwProductOrder" Width="1.5" PointX="11.375" PointY="29.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwProduct" Width="1.5" PointX="29.375" PointY="13.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwProductShipment" Width="1.5" PointX="13.375" PointY="29.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwProductsMain" Width="1.5" PointX="15.375" PointY="29.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwProductSubProduct" Width="1.5" PointX="29.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptBackOrder" Width="1.5" PointX="29.375" PointY="23.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptBidSheet" Width="1.5" PointX="30.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptCreditMemo" Width="1.5" PointX="21.375" PointY="30.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptCreditMemo1" Width="1.5" PointX="23.375" PointY="30.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptOrderConfirmation" Width="1.5" PointX="31.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptPackingSlip" Width="1.5" PointX="31.375" PointY="22.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptPickSheet" Width="1.5" PointX="29.375" PointY="31.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptProductCollection" Width="1.5" PointX="31.375" PointY="31.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptPurchaseOrder" Width="1.5" PointX="32.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwRptShipmentInvoice" Width="1.5" PointX="33.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwShipmentCatalog" Width="1.5" PointX="11.375" PointY="33.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwShipmentItem" Width="1.5" PointX="13.375" PointY="33.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwShipment" Width="1.5" PointX="15.375" PointY="33.75" />
+        <EntityTypeShape EntityType="MadduxModel.OrderRack" Width="1.5" PointX="26.25" PointY="33.625" />
+        <AssociationConnector Association="MadduxModel.FK__OrderRack__Quant__5ECA0095" />
+        <AssociationConnector Association="MadduxModel.FK__OrderRack__RackI__5FBE24CE" />
+        <AssociationConnector Association="MadduxModel.FK__RackProdu__RackI__60B24907" />
+        <AssociationConnector Association="MadduxModel.FK__RackProdu__Produ__61A66D40" />
+        <AssociationConnector Association="MadduxModel.FK__OrderItem__Order__629A9179" />
+        <AssociationConnector Association="MadduxModel.FK_CreditItem_Product" />
+        <EntityTypeShape EntityType="MadduxModel.vwUsersMain" Width="1.5" PointX="33.375" PointY="22.75" />
+        <EntityTypeShape EntityType="MadduxModel.ProductProgram" Width="1.5" PointX="33.375" PointY="28.875" />
+        <AssociationConnector Association="MadduxModel.FK_ProductCatalog_ProductProgram" />
+        <EntityTypeShape EntityType="MadduxModel.Campaign" Width="1.5" PointX="35.625" PointY="28.625" />
+        <AssociationConnector Association="MadduxModel.FK_Campaign_ProductProgram" />
+        <AssociationConnector Association="MadduxModel.FK_Journal_Campaign" />
+        <EntityTypeShape EntityType="MadduxModel.ProductProgramShipDate" Width="1.5" PointX="35.625" PointY="33.125" />
+        <AssociationConnector Association="MadduxModel.FK_ProductProgramShipDates_ProductProgram" />
+        <EntityTypeShape EntityType="MadduxModel.ProductCatalogShipDate" Width="1.5" PointX="9" PointY="22.875" />
+        <AssociationConnector Association="MadduxModel.FK_ProductCatalogShipDates_ProductCatalog" />
+        <EntityTypeShape EntityType="MadduxModel.JournalDetail" Width="1.5" PointX="34.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyFollowup" Width="1.5" PointX="17.375" PointY="34.75" />
+        <EntityTypeShape EntityType="MadduxModel.FreightCharge" Width="1.5" PointX="9" PointY="43.625" />
+        <AssociationConnector Association="MadduxModel.FK__FreightCh__Provi__1E3A7A34" />
+        <EntityTypeShape EntityType="MadduxModel.StaticPage" Width="1.5" PointX="10.375" PointY="17.75" />
+        <EntityTypeShape EntityType="MadduxModel.ProductRackShipDate" Width="1.5" PointX="11.25" PointY="39" />
+        <AssociationConnector Association="MadduxModel.FK__ProductRa__RackI__2E70E1FD" />
+        <AssociationConnector Association="MadduxModel.JournalCampaign" />
+        <EntityTypeShape EntityType="MadduxModel.vmCustomerDetail" Width="1.5" PointX="35.375" PointY="8.75" />
+        <AssociationConnector Association="MadduxModel.ProductCatalogState" />
+        <EntityTypeShape EntityType="MadduxModel.CampaignShipdate" Width="1.5" PointX="37.875" PointY="27.25" />
+        <AssociationConnector Association="MadduxModel.FK_Campaign_CampaignShipdate" />
+        <AssociationConnector Association="MadduxModel.FK_Campaign_Catalog" />
+        <AssociationConnector Association="MadduxModel.FK_ProductCatalogShipDates_CampaignShipdate" />
+        <EntityTypeShape EntityType="MadduxModel.DeliveryHub" Width="1.5" PointX="35.375" PointY="14" />
+        <EntityTypeShape EntityType="MadduxModel.PurchaseOrder" Width="1.5" PointX="37.625" PointY="14" />
+        <AssociationConnector Association="MadduxModel.FK_PurchaseOrders_DeliveryHub" />
+        <AssociationConnector Association="MadduxModel.FK_Orders_PurchaseOrders" />
+        <EntityTypeShape EntityType="MadduxModel.vwMyOrders_OLD" Width="1.5" PointX="35.375" PointY="17.75" />
+        <EntityTypeShape EntityType="MadduxModel.RackRack" Width="5.25" PointX="12.125" PointY="43" />
+        <AssociationConnector Association="MadduxModel.FK__RackRacks__Produ__297722B6" />
+        <AssociationConnector Association="MadduxModel.FK__RackRacks__RackI__2A6B46EF" />
+        <AssociationConnector Association="MadduxModel.RackPhotos" />
+        <AssociationConnector Association="MadduxModel.FK_Orders_ProductCatalogRack" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+﻿.row-margin{
+    margin-bottom: 15px;
+}
+.top-buffer {
+    margin-top: 25px;
+}
+
+.action-margin {
+    margin-top: 70px;
+}
+.required:after {
+    content: "*";
+    font-weight: bold;
+    color: red;
+}
+span#cphBody_lblShowAll {
+    font-weight: 700;
+}
+span#cphBody_lblRackRecordCount {
+    font-weight: 700;
+}
+span#cphBody_lblProgramRecordCount {
+    font-weight: 700;
+}
+span#cphBody_lblRecordCount {
+    font-weight: 700;
+}

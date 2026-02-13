@@ -1,0 +1,233 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Maddux.Catch.Master.cs" Inherits="Maddux.Catch.Catch" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Maddux.Catch</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/bootstrap.min.css")%>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/font-awesome.min.css")%>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/AdminLTE.min.css")%>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/skins/skin-red.min.css")%>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/css/catch-style.css")%>" />
+    <link rel="stylesheet" href="<%= ResolveUrl("~/Content/bootstrap-datetimepicker.min.css") %>" />
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/jquery-2.2.3.min.js")%>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/bootstrap.min.js")%>"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157091292-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-157091292-1');
+    </script>
+    <asp:ContentPlaceHolder ID="cphHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="hold-transition skin-red sidebar-mini">
+    <div class="wrapper">
+        <form runat="server" id="frmMain" enctype="multipart/form-data">
+            <!-- Main Header -->
+            <header class="main-header">
+                <asp:HiddenField ID="hfPageType" runat="server" />
+                <asp:HiddenField ID="hfPageName" runat="server" />
+
+                <!-- Logo -->
+                <div class="text-center">
+                    <a href="/default.aspx" class="logo">
+                        <!-- mini logo for sidebar mini 50x50 pixels -->
+                        <span class="logo-mini"><b>MC</b></span>
+                        <!-- logo for regular state and mobile devices -->
+                        <span class="logo-lg">
+                            <img src="/img/BrandLogo.png" height="45" class="pull-center" width="100" alt="Redbud Logo" style="margin-bottom: 10px; margin-top: 1px;" /></span>
+
+                    </a>
+                </div>
+
+
+                <!-- Header Navbar -->
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account Menu -->
+                            <li class="dropdown user user-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- The user image in the navbar-->
+                                    <%--<asp:Image ID="imgUserNavBar" runat="server" CssClass="user-image" AlternateText="User Image" />--%>
+                                    <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                    <asp:Label ID="lblUserName" runat="server" CssClass="hidden-xs">User Name</asp:Label>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <%--<asp:Image ID="imgUserProfile" runat="server" CssClass="img-circle" AlternateText="User Image" />--%>
+                                        <p>
+                                            <asp:Literal ID="litUserName" runat="server">User Name</asp:Literal>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="<%= ResolveUrl("~/myaccount.aspx")%>" class="btn btn-default btn-flat">Profile</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="<%= ResolveUrl("~/logout.aspx")%>" class="btn btn-default btn-flat">Sign out</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+
+                    <!-- Sidebar user panel (optional) -->
+                    <div class="user-panel d-none">
+                        <div style="color: white; font-weight: 700; font-size: 16px" class="text-center">
+                            <asp:Literal ID="litSidebarUserName" runat="server">User Name</asp:Literal>
+                        </div>
+
+                    </div>
+
+                    <!-- search form (Optional) -->
+                    <div class="sidebar-form">
+                        <div class="input-group">
+                            <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" placeholder="Search..." onkeypress="HandleSearchKeyPress(event);"></asp:TextBox>
+                            <div class="input-group-btn">
+                                <asp:DropDownList Style="height: inherit!important; padding: 3px 6px!important" ID="ddlSearchType" runat="server" AutoPostBack="False" CssClass="btn btn-search" OnChange="return DoSearch();">
+                                    <asp:ListItem>Customers</asp:ListItem>
+                                    <asp:ListItem>Orders</asp:ListItem>
+                                    <asp:ListItem>Shipments</asp:ListItem>
+                                    <asp:ListItem>Credits</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.search form -->
+
+                    <!-- Sidebar Menu -->
+                    <asp:BulletedList ID="blSidebarMenu" runat="server" CssClass="sidebar-menu" BulletStyle="NotSet">
+                    </asp:BulletedList>
+                    <ul class="sidebar-menu">
+                        <asp:Literal ID="litSidebarMenu" runat="server"></asp:Literal>
+                    </ul>
+                    <!-- /.sidebar-menu -->
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        <asp:Literal ID="litPageHeader" runat="server">Page Header</asp:Literal>
+                    </h1>
+                    <div>
+                        <asp:Literal ID="litPageSubHeader" runat="server"></asp:Literal>
+                    </div>
+                    <ol class="breadcrumb" style="font-size: 16px; padding-right: 20px; top: 10px">
+                        <li>
+                            <asp:Literal ID="litTotal" runat="server"></asp:Literal></li>
+                    </ol>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <asp:Literal ID="MasterErrorMessages" runat="server"></asp:Literal>
+                    <asp:ContentPlaceHolder ID="cphBody" runat="server">
+                    </asp:ContentPlaceHolder>
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <!-- To the right -->
+                <div class="pull-right hidden-xs">
+                    Plant a little passion.
+                </div>
+                <!-- Default to the left -->
+                Copyright &copy; <%=DateTime.Now.Year.ToString() %><a href="http://www.redbud.com" target="_blank"> Redbud Supply Inc.</a> All rights reserved.
+            </footer>
+        </form>
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED JS SCRIPTS -->
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/app.min.js")%>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/js/date.js") %>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/scripts/moment-with-locales.min.js") %>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/scripts/bootstrap-datetimepicker.min.js") %>"></script>
+    <script type="text/javascript">
+
+        function $$(id, context) {
+            var el = $("#" + id, context);
+            if (el.length < 1)
+                el = $("[id$=_" + id + "]", context);
+            return el;
+        }
+
+        function HandleSearchKeyPress(e) {
+
+            keynum = e.keyCode ? e.keyCode : e.which;
+
+            if (keynum == 13) {
+                e.preventDefault();
+                return DoSearch();
+            }
+        }
+
+        function DoSearch() {
+            var cboType = document.getElementById("<%=ddlSearchType.ClientID%>");
+            var txtSearch = document.getElementById("txtSearch");
+            var searchPage = "";
+
+            if (txtSearch.value.trim().length > 0) {
+                switch (cboType.value) {
+                    case "Orders":
+                        searchPage = "<%= ResolveUrl("~/order/search.aspx")%>";
+                        break;
+                    case "Shipments":
+                        searchPage = "<%= ResolveUrl("~/shipping/search.aspx")%>";
+                        break;
+                    case "Credits":
+                        searchPage = "<%= ResolveUrl("~/credit/search.aspx")%>";
+                        break;
+                    default:
+                        searchPage = "<%= ResolveUrl("~/customer/search.aspx")%>";
+                        break;
+                }
+
+                window.location = searchPage + "?q=" + encodeURIComponent(txtSearch.value);
+            }
+
+
+            return false;
+        }
+
+        $(document).ready(function () {
+            $('.datepicker').datetimepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="cphScript" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>
